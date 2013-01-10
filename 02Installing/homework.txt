@@ -2,16 +2,47 @@ Homework for Chapter 2 of Learning MySQL (2006 edition), from p. 94:
 
 Exercises:
 1) What is command completion?
+CTRL D or CTRL F, saves typing by cycling through file matches
 
 2) What are the relative advantages of installing MySQL using the package,
  directory archive (tarball or "no-install", or compiled methods?
 
+By using the compile, you make sure that you have the most recent version of the software and get a performance increase of up to 30%.  However, it can be error-prone and tedious.
+
 3) How do you verify the integrity of downloaded packages?
 
+You can run an algorithm such as MD5  that checks the data of the file and comes up with a 128-bit number, or checksum, from the data file.  It's almost impossible to keep the original file checksum the same as a modified file without altering the checksum of the original file.
+Macintosh:Documents Rena$ md5 mysql-5.5.29-osx10.6-x86.dmg
+MD5 (mysql-5.5.29-osx10.6-x86.dmg)	 = 	e76cca091725a054f2f0abdc8a143604
+Macintosh:Documents Rena$ 
+
+file's checksum 			=	e76cca091725a054f2f0abdc8a143604
+
+match					=  					100 %
+
 4) How do you add the MySQL bin directory to the operating system path?
+ you have installed the Startup Item, use this command:
+
+     shell> sudo /Library/StartupItems/MySQLCOM/MySQLCOM start
+     (ENTER YOUR PASSWORD, IF NECESSARY)
+     (PRESS CONTROL-D OR ENTER "EXIT" TO EXIT THE SHELL)
+
+If you don't use the Startup Item, enter the following command sequence:
+
+     shell> cd /usr/local/mysql
+     shell> sudo ./bin/mysqld_safe
+     (ENTER YOUR PASSWORD, IF NECESSARY)
+     (PRESS CONTROL-Z)
+     shell> bg
+     (PRESS CONTROL-D OR ENTER "EXIT" TO EXIT THE SHELL)
+
+
 
 Additional Exercises (not in the book): 
 1) Document how you installed MySQL and any issues you came across with installation. 
  (The goal is to be easy to install it again on a similar machine.)
+It was extra steps to have to sign up with Oracle and register my usage, but not difficult.
 
 2) Document where important files should be.
+
+ Rena/Documents/mysql-marinate 
